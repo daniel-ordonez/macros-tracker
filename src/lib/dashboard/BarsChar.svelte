@@ -213,6 +213,7 @@
   .chart__graph {
     display: flex;
     align-items: end;
+    overflow: auto;
   }
   .chart__graph>canvas {
     aspect-ratio: 2/1;
