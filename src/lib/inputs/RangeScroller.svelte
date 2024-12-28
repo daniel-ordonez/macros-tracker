@@ -189,7 +189,7 @@
     height: var(--slider-height);
     display: flex;
     justify-content: center;
-    font-family: 'Menlo Regular';
+    font-family: 'Menlo Regular', "Inconsolata";
   }
   .range__options.align--center {
     justify-content: center;
