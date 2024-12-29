@@ -15,7 +15,7 @@
   const onDataChanged = (dailyMacros, targetMacros) => {
     if (!dailyMacros || !Object.keys(dailyMacros).length || !targetMacros || !Object.keys(targetMacros).length) return
 
-    calsDiff = decimal(targetMacros.calories - dailyMacros.calories)
+    calsDiff = Math.round(targetMacros.calories - dailyMacros.calories)
     
     const dataLabels = {"protein": "Proteína", "carbs": "Carbos", "fat": "Grasa"}
     const dataKeys = Object.keys(dataLabels)
@@ -186,7 +186,7 @@
 <div id="bars-chart">
   <div class="flex col ai--center mb--md">
     <div>
-      <span class="text--xl">{dailyMacros?.calories}</span>
+      <span class="text--xl">{Math.round(dailyMacros?.calories || 0)}</span>
       <small>kcals</small>
     </div>
       <span class="text--sm c--gray">

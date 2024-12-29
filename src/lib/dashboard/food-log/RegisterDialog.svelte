@@ -228,6 +228,7 @@
     flex-direction: column;
     row-gap: .25rem;
     max-height: 20rem;
+    overflow: auto;
   }
   .food-item {
     display: flex;

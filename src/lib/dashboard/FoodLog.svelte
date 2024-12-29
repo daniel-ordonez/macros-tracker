@@ -56,13 +56,16 @@
         </span></button>
     </div>
   </div>
-  <div id="logs-list">
-    {#each dateLogs as [hour, items] (hour) }
-      <TimeDivision timeFrom="{hour}:00" timeTo="{hour < 24 ? parseInt(hour) + 1: '00'}:00"></TimeDivision>
-      {#each items as item, i (hour + i + item.id) }
-      <FoodEntryCard data={item}></FoodEntryCard>
+  <div class="overflow-container">
+    <div id="logs-list">
+      {#each dateLogs as [hour, items] (hour) }
+        <TimeDivision timeFrom="{hour}:00" timeTo="{hour < 24 ? parseInt(hour) + 1: '00'}:00"></TimeDivision>
+        {#each items as item, i (hour + i + item.id) }
+        <FoodEntryCard data={item}></FoodEntryCard>
+        {/each}
       {/each}
-    {/each}
+    </div>
+
   </div>
 </div>
 
@@ -74,6 +77,18 @@
   grid-auto-flow: row;
   grid-template-columns: [macros-start brand-start name-start]auto[brand-end] 1fr[name-end macros-end numbers-start serving-start] auto[serving-end measures-start] auto[measures-end numbers-end];
   row-gap: .5rem;
+}
+#food-log {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.overflow-container {
+  height: 100%;
+  overflow: auto;
+  padding-right: 1rem;
+  margin-right: -1rem;
+  padding-bottom: 1rem;
 }
 #food-log .card__header {
   padding: 1rem 0;
