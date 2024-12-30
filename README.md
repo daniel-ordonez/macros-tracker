@@ -4,7 +4,7 @@
 
 [macros-tracker.netlify.app](https://macros-tracker.netlify.app/)
 
-#### Video Demo: [TODO]()
+#### Video Demo: https://youtu.be/YyagaKD63No
 
 ---
 
